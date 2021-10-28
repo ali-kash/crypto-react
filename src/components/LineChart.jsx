@@ -7,20 +7,20 @@ const Title = Typography
 
 const LineChart = ({ coinHistory, currentPrice, coinName }) => {
 	const coinPrice = []
-	const cointimestamp = []
+	const coinTimestamp = []
 
 	for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
 		coinPrice.push(coinHistory.data.history[i].price)
-		cointimestamp.push(
+		coinTimestamp.push(
 			new Date(coinHistory.data.history[i].timestamp).toLocaleDateString()
 		)
 	}
 
 	const data = {
-		labels: cointimestamp,
+		labels: coinTimestamp,
 		datasets: [
 			{
-				label: 'Price in USD',
+				label: 'Price In USD',
 				data: coinPrice,
 				fill: false,
 				backgroundColor: '#0071bd',
@@ -34,7 +34,7 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
 			yAxes: [
 				{
 					ticks: {
-						beginAtZero: true,
+						display: true,
 					},
 				},
 			],
