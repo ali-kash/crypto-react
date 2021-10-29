@@ -107,8 +107,8 @@ const CryptoDetails = () => {
 				placeholder='Select Time Period'
 				onChange={(value) => setTimePeriod(value)}
 			>
-				{time.map((date, i) => (
-					<Option key={i}>{date}</Option>
+				{time.map((date) => (
+					<Option key={date}>{date}</Option>
 				))}
 			</Select>
 
@@ -126,7 +126,7 @@ const CryptoDetails = () => {
 						</Title>
 						<p>An overview showing the stats of {cryptoDetails.name}</p>
 					</Col>
-					{stats.map(({ icon, title, value, i }) => (
+					{stats.map(({ icon, title, value }) => (
 						<Col className='coin-stats' key={title}>
 							<Col className='coin-stats-name'>
 								<Text>{icon}</Text>
