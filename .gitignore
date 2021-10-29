@@ -10,7 +10,6 @@
 
 # production
 /build
-.env
 .env_copy
 
 # misc
